@@ -14,10 +14,9 @@ export function Contact() {
       <h2>Feel free to reach out to me anytime via any of the following mediums.</h2>
       <h2><b>Phone:</b> 773-633-0078</h2>
       <h2><b>Email:</b> Semiroundpizza8@gmail.com</h2>
-      <i class="fab fa-linkedin-in fa-3x" style={icons}></i>
-      <i class="fab fa-github-alt fa-3x" style={icons}></i>
       <ContactForm />
-      {/* <i class="fas fa-camera-retro fa-4x" style={icons}></i> */}
+      <i className="fab fa-linkedin-in fa-3x" style={icons}></i>
+      <i className="fab fa-github-alt fa-3x" style={icons}></i>
     </div>
   )
 }

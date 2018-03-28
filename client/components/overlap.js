@@ -34,12 +34,11 @@ export let overlap = (word, color) => {
     return singleWord !== words[words.length - 1] ? singleWord + ' ' : singleWord;
   })
   return (
-    <span>
+    <span key={Math.random() * 40000}>
       {words.map(singleWord => (
         <span key={singleWord}>
           <span style={firstStyle}>{singleWord}</span>
           <span style={secondStyle}>{singleWord}</span>
-           
         </span>
       ))}
 
