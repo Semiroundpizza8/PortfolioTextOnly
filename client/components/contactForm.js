@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
+import axios from 'axios';
 
 class TextFieldExampleSimple extends React.Component {
   constructor(props) {
@@ -9,18 +11,32 @@ class TextFieldExampleSimple extends React.Component {
       name: '',
       email: '',
       phone: '',
-      content: ''
+      content: '',
+      disableSubmit: true
     }
   }
 
   handleChange = (event) => {
     let newState = {}
-    newState[event.target.name] = event.target.value
+    let allChanged = true;
+
+    newState[event.target.name] = event.target.value;
+    for (var i in this.state) {
+      if (typeof this.state[i] === 'string' && this.fieldCheck(event)) {
+        allChanged = false;
+      }
+    }
+
+    newState.disableSubmit = !allChanged;
+
     this.setState(newState);
   }
 
+  handleSubmit = () => {
+    axios.post('/api/email', this.state)
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div>
         <h1>Contact Me</h1>
@@ -47,13 +63,20 @@ class TextFieldExampleSimple extends React.Component {
         /><br />
         <TextField
           floatingLabelText="Content"
-          name="contact"
+          name="content"
           value={this.state.content}
           onChange={this.handleChange}
           multiLine={true}
+          fullWidth={true}
           rows={2}
           rowsMax={4}
         /><br />
+        <FlatButton
+          label="Submit"
+          primary={true}
+          onClick={this.handleSubmit}
+          disabled={this.state.disableSubmit}
+        />
       </div>
     );
   }
