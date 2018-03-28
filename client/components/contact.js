@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { overlap } from './overlap';
+import ContactForm from './contactForm';
 
 export function Contact() {
   let icons = {
@@ -15,6 +16,7 @@ export function Contact() {
       <h2><b>Email:</b> Semiroundpizza8@gmail.com</h2>
       <i class="fab fa-linkedin-in fa-3x" style={icons}></i>
       <i class="fab fa-github-alt fa-3x" style={icons}></i>
+      <ContactForm />
       {/* <i class="fas fa-camera-retro fa-4x" style={icons}></i> */}
     </div>
   )
