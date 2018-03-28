@@ -7,7 +7,7 @@ import Routes from './routes'
 const App = () => {
   return (
     <div style={{
-      marginLeft: '5%',
+      marginLeft: '25%',
       marginRight: '5%',
       // textAlign: 'justify'
       }}>

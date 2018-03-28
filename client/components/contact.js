@@ -1,10 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { overlap } from './overlap';
 
 export function Contact() {
+  let icons = {
+    marginRight: '3%',
+  }
   return (
     <div>
-      <h1>Aliens Are Real</h1>
+      <h1 style={{fontSize: '4em'}}>Talk to me!</h1>
+      <h2>{overlap('Seriously, I\'m bored.', 'yellow')}</h2>
+      <h2>Feel free to reach out to me anytime via any of the following mediums.</h2>
+      <h2><b>Phone:</b> 773-633-0078</h2>
+      <h2><b>Email:</b> Semiroundpizza8@gmail.com</h2>
+      <i class="fab fa-linkedin-in fa-3x" style={icons}></i>
+      <i class="fab fa-github-alt fa-3x" style={icons}></i>
+      {/* <i class="fas fa-camera-retro fa-4x" style={icons}></i> */}
     </div>
   )
 }

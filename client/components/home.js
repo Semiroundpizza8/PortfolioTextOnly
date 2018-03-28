@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {overlap} from './overlap.js';
+import { overlap } from './overlap.js';
 
 
 export function Home() {
