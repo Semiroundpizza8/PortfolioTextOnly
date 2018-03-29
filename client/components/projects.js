@@ -6,14 +6,6 @@ export function Projects() {
   const projectData = [
     {
       id: 1,
-      name: 'Lexi',
-      link: 'https://github.com/Semiroundpizza8/Lexi_Chrome_Extension',
-      type: 'Chrome Extension',
-      description: 'Helps make the web more accessable for people suffering with dyslexia by providing audio and visual representations of words.',
-      technologies: 'React, Rita.js, Wordnik, Chrome Extension API, Webpack'
-    },
-    {
-      id: 2,
       name: 'DayDreamer',
       link: 'https://github.com/Capstone-Daydreamer/Capstone-Daydreamer',
       type: 'Web Application',
@@ -21,12 +13,20 @@ export function Projects() {
       technologies: 'Cronofy API, React, Redux, Sequelize, Express, Semantic UI.'
     },
     {
-      id: 3,
+      id: 2,
       name: 'Ark',
       link: 'https://github.com/Semiroundpizza8/Ark-1',
       type: 'iOS Application',
       description: 'Provides a centralized location for civilian rescue efforts during emergency situations by routing rescuers to those in need.',
       technologies: 'Swift, Google Maps API, Django.'
+    },
+    {
+      id: 3,
+      name: 'Lexi',
+      link: 'https://github.com/Semiroundpizza8/Lexi_Chrome_Extension',
+      type: 'Chrome Extension',
+      description: 'Helps make the web more accessable for people suffering with dyslexia by providing audio and visual representations of words.',
+      technologies: 'React, Rita.js, Wordnik, Chrome Extension API, Webpack'
     },
     {
       id: 4,

@@ -15,6 +15,8 @@ const Navbar = () => (
         <NavLink to="/projects"><h3>Projects</h3></NavLink>
         <NavLink to="/contact"><h3>Contact</h3></NavLink>
       </div>
+      <p><b>Email:</b> Semiroundpizza8@gmail.com</p>
+      <p><b>Phone:</b> 773-633-0078</p>
     </nav>
   </div>
 )
