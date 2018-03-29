@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import axios from 'axios';
@@ -22,7 +21,7 @@ class TextFieldExampleSimple extends React.Component {
 
     newState[event.target.name] = event.target.value;
     for (var i in this.state) {
-      if (typeof this.state[i] === 'string' && this.fieldCheck(event)) {
+      if (typeof this.state[i] === 'string' && !this.state[i].length) {
         allChanged = false;
       }
     }
@@ -35,6 +34,7 @@ class TextFieldExampleSimple extends React.Component {
   handleSubmit = () => {
     axios.post('/api/email', this.state)
   }
+
 
   render() {
     return (

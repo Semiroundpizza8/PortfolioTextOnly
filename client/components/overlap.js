@@ -9,8 +9,6 @@ export let overlap = (word, color) => {
     'aqua',
     'aquamarine',
     'greenyellow',
-    'mediumspringgreen',
-    'tomato',
   ]
 
   const firstStyle = {

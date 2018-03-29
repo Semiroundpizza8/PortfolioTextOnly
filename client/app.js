@@ -1,19 +1,19 @@
 import React from 'react'
 
-import {Navbar} from './components'
+import {Navbar, Footer} from './components'
 import Routes from './routes'
 
 
 const App = () => {
   return (
     <div style={{
-      marginLeft: '25%',
-      marginRight: '5%',
+      marginLeft: '22.5%',
+      marginRight: '7.5%',
       // textAlign: 'justify'
       }}>
       <Navbar />
       <Routes />
-      <Navbar />
+      <Footer />
     </div>
   )
 }

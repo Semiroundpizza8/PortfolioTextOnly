@@ -48,10 +48,10 @@ export function Projects() {
 
   return (
     <div>
-      <h1 style={{ fontSize: '4em' }}>Projects.</h1>
+      <h1 style={{ fontSize: '3.5em' }}>Projects.</h1>
       {projectData.map(project => (
         <div key={project.id}>
-          <h1 style={{ fontSize: '3em' }}><a href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%' }}>........ {project.type}</span></h1>
+          <h1 style={{ fontSize: '3em' }}><a href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '40%', display: 'inline', opacity: '.5'}}>  {project.type}</span></h1>
           <p style={{ fontSize: '1em' }}>{project.description}</p>
           <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
         </div>
