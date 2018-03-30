@@ -9,7 +9,7 @@ export function Contact() {
   }
   return (
     <div>
-      <h1 style={{fontSize: '3.5em'}}>Talk to me!</h1>
+      <h1>Talk to me!</h1>
       <h2>{overlap('Seriously, I\'m bored.', 'yellow')}</h2>
       <p>Feel free to reach out to me anytime via any of the following mediums.</p>
       <i className="fab fa-linkedin-in fa-2x" style={icons}></i>

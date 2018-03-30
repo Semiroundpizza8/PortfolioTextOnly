@@ -32,7 +32,15 @@ class TextFieldExampleSimple extends React.Component {
   }
 
   handleSubmit = () => {
-    axios.post('/api/email', this.state)
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+      content: '',
+      disableSubmit: true
+    }).then(() => {
+      axios.post('/api/email', this.state)
+    })
   }
 
 

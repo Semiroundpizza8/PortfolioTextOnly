@@ -6,11 +6,7 @@ import Routes from './routes'
 
 const App = () => {
   return (
-    <div style={{
-      marginLeft: '22.5%',
-      marginRight: '7.5%',
-      // textAlign: 'justify'
-      }}>
+    <div className="wholeBody" >
       <Navbar />
       <Routes />
       <Footer />

@@ -3,23 +3,55 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { logout } from '../store'
+import responsive from 'react-responsive-decorator';
 
-const Navbar = () => (
-  <div style={{marginTop: '7.5%'}}>
-    <hr />
-    <nav>
+class Navbar extends React.Component {
+  state = {
+    isMobile: false
+  }
+
+  componentDidMount() {
+    this.props.media({ minWidth: 768 }, () => {
+      this.setState({
+        isMobile: false
+      });
+    });
+    this.props.media({ maxWidth: 768 }, () => {
+      this.setState({
+        isMobile: true
+      });
+    });
+  }
+
+  render() {
+    const { isMobile } = this.state;
+    return (
       <div>
-        {/* The navbar will show these NavLinks before you log in */}
-        <NavLink to="/"><h3>Benjamin Odisho</h3></NavLink>
-        <NavLink to="/about"><h3>About</h3></NavLink>
-        <NavLink to="/projects"><h3>Projects</h3></NavLink>
-        <NavLink to="/contact"><h3>Contact</h3></NavLink>
+        <hr />
+        {!isMobile ?
+          <nav>
+            <div>
+              {/* The navbar will show these NavLinks before you log in */}
+              <NavLink to="/"><h2>Benjamin Odisho</h2></NavLink>
+              <NavLink to="/about"><h2>About</h2></NavLink>
+              <NavLink to="/projects"><h2>Projects</h2></NavLink>
+              <NavLink to="/contact"><h2>Contact</h2></NavLink>
+            </div>
+          </nav> :
+          <nav>
+            <div>
+              {/* The navbar will show these NavLinks before you log in */}
+              <NavLink to="/"><i className="fas fa-home"></i></NavLink>
+              <NavLink to="/about"><i className="fas fa-user-circle" /></NavLink>
+              <NavLink to="/projects"><i className="fas fa-folder-open" /></NavLink>
+              <NavLink to="/contact"><i className="fas fa-envelope" /></NavLink>
+            </div>
+          </nav>
+        }
       </div>
-      <p><b>Email:</b> Semiroundpizza8@gmail.com</p>
-      <p><b>Phone:</b> 773-633-0078</p>
-    </nav>
-  </div>
-)
+    );
+  }
+}
 
 /**
  * CONTAINER
@@ -38,5 +70,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
-
+export default responsive(connect(mapState, mapDispatch)(Navbar))

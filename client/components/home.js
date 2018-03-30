@@ -4,7 +4,7 @@ import { overlap } from './overlap.js';
 import { NavLink } from 'react-router-dom';
 
 export function Home() {
-  const textStyle = { display: 'inline', fontSize: '3.5em' };
+  const textStyle = { display: 'inline' };
   return (
     <div>
       <h1 style={textStyle}>Hello you beautiful, wonderful person. I’m <NavLink to="/about" onMouseDown={(event) => {event.preventDefault()}}>{overlap('Benjamin Odisho', 'yellow')}</NavLink> and this is my temporary site. </h1>
