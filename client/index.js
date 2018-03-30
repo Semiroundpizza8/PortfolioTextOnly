@@ -5,6 +5,7 @@ import { Router } from 'react-router-dom'
 import history from './history'
 import store from './store'
 import App from './app'
+import ScrollToTop from './scrollToTop'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // establishes socket connection
@@ -14,7 +15,9 @@ ReactDOM.render(
   <MuiThemeProvider>
     <Provider store={store}>
       <Router history={history}>
-        <App />
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
       </Router>
     </Provider>
   </MuiThemeProvider>,

@@ -32,22 +32,23 @@ class TextFieldExampleSimple extends React.Component {
   }
 
   handleSubmit = () => {
+    let oldState = this.state;
+
     this.setState({
       name: '',
       email: '',
       phone: '',
       content: '',
       disableSubmit: true
-    }).then(() => {
-      axios.post('/api/email', this.state)
+    }, () => {
+      axios.post('/api/email', oldState)
     })
   }
 
 
   render() {
     return (
-      <div>
-        <h1>Contact Me</h1>
+      <div style={{marginBottom: '5%'}}>
         <TextField
           name="name"
           hintText="Benjamin Odisho"

@@ -10,12 +10,11 @@ export function Contact() {
   return (
     <div>
       <h1>Talk to me!</h1>
-      <h2>{overlap('Seriously, I\'m bored.', 'yellow')}</h2>
       <p>Feel free to reach out to me anytime via any of the following mediums.</p>
-      <i className="fab fa-linkedin-in fa-2x" style={icons}></i>
-      <i className="fab fa-github-alt fa-2x" style={icons}></i>
-      <p><b>Phone:</b> 773-633-0078</p>
-      <p><b>Email:</b> Semiroundpizza8@gmail.com</p>
+      <p>Email: Semiroundpizza8@gmail.com</p>
+      <p>Phone: 773-633-0078</p>
+      <a href="https://www.linkedin.com/in/benjamin-odisho/" style={{marginRight: '2.5%'}}><i className="fab fa-linkedin-in fa-lg" /></a>
+      <a to="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a>
       <ContactForm />
     </div>
   )

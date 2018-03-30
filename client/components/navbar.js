@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { logout } from '../store'
 import responsive from 'react-responsive-decorator';
+import { withRouter } from 'react-router'
+import { overlap } from './overlap';
 
 class Navbar extends React.Component {
   state = {
@@ -11,12 +13,12 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.media({ minWidth: 768 }, () => {
+    this.props.media({ minWidth: 1090 }, () => {
       this.setState({
         isMobile: false
       });
     });
-    this.props.media({ maxWidth: 768 }, () => {
+    this.props.media({ maxWidth: 1090 }, () => {
       this.setState({
         isMobile: true
       });
@@ -25,16 +27,22 @@ class Navbar extends React.Component {
 
   render() {
     const { isMobile } = this.state;
+    const path = this.props.location.pathname
+
     return (
       <div>
         {!isMobile ?
           <nav>
             <div>
-              {/* The navbar will show these NavLinks before you log in */}
-              <NavLink to="/"><h2>Benjamin Odisho</h2></NavLink>
-              <NavLink to="/about"><h2>About</h2></NavLink>
-              <NavLink to="/projects"><h2>Projects</h2></NavLink>
-              <NavLink to="/contact"><h2>Contact</h2></NavLink>
+              {/* The Footer will show these NavLinks before you log in */}
+              <h3 style={{ display: 'inline' }}><NavLink to="/">{path === '/' ? overlap('Benjamin Odisho') : 'Benjamin Odisho'}</NavLink></h3>
+              <h3 style={{ display: 'inline' }}><NavLink to="/about">{path === '/about' ? overlap('About') : 'About'}</NavLink></h3>
+              <h3 style={{ display: 'inline' }}><NavLink to="/projects">{path === '/projects' ? overlap('Projects') : 'Projects'}</NavLink></h3>
+              <h3 style={{ display: 'inline' }}><NavLink to="/contact">{path === '/contact' ? overlap('Contact') : 'Contact'}</NavLink></h3>
+              <h3 style={{ display: 'inline' }}><a href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
+              <h3 style={{ display: 'inline' }}><a href="https://github.com/Semiroundpizza8">Github</a></h3>
+              {/* <a href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in fa-lg" /></a>
+              <a to="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a> */}
             </div>
           </nav> :
           <nav>
@@ -44,6 +52,8 @@ class Navbar extends React.Component {
               <NavLink to="/about"><i className="fas fa-user-circle" /></NavLink>
               <NavLink to="/projects"><i className="fas fa-folder-open" /></NavLink>
               <NavLink to="/contact"><i className="fas fa-envelope" /></NavLink>
+              <a href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
+              <a to="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
             </div>
           </nav>
         }
@@ -70,4 +80,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default responsive(connect(mapState, mapDispatch)(Navbar))
+export default withRouter(responsive(connect(mapState, mapDispatch)(Navbar)))

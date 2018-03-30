@@ -22,7 +22,7 @@ export function About() {
       <h2>If you want to get in touch and discuss any of my past or potential projects, please reach out to me via <NavLink to={'/contact'}>{overlap('contact', 'lightblue')}</NavLink></h2>
       <br />
       <h2>Technologies Known</h2>
-      <h3>{overlap('Proficient')}</h3>
+      <h3>Proficient</h3>
       <div style={wrapper}>
         <Chip style={singleChip}>Javascript</Chip>
         <Chip style={singleChip}>React</Chip>
@@ -40,7 +40,7 @@ export function About() {
         <Chip style={singleChip}>Adobe Creative Suite</Chip>
         <Chip style={singleChip}>UI/UX Design</Chip>
       </div>
-      <h3>{overlap('Knowledgeable')}</h3>
+      <h3>Knowledgeable</h3>
       <div style={wrapper}>
         <Chip style={singleChip}>Firebase</Chip>
         <Chip style={singleChip}>Chrome Extension API</Chip>
@@ -57,7 +57,7 @@ export function About() {
         <Chip style={singleChip}>Processing</Chip>
         <Chip style={singleChip}>oAuth</Chip>
       </div>
-      <h3>{overlap('Some Experience')}</h3>
+      <h3>Some Experience</h3>
       <div style={wrapper}>
         <Chip style={singleChip}>C#</Chip>
         <Chip style={singleChip}>Java</Chip>

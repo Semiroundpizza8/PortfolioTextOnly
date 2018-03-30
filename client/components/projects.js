@@ -51,7 +51,7 @@ export function Projects() {
       <h1>Projects.</h1>
       {projectData.map(project => (
         <div key={project.id}>
-          <h1><a href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '40%', opacity: '.5'}}>  {project.type}</span></h1>
+          <h2 style={{ fontSize: '2em'}}><a href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5'}}>  {project.type}</span></h2>
           <p style={{ fontSize: '1em' }}>{project.description}</p>
           <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
         </div>
