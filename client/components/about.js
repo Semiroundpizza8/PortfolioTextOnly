@@ -21,7 +21,7 @@ export function About() {
       <p>Following my studies, the staff decided I was awesome enough to be kept on as a Software Engineering Teaching Fellow. There I worked teaching 60+ students those same technologies, acting as a project manager for student projects, and giving lectures on web development technologies. </p>
       <h2>If you want to get in touch and discuss any of my past or potential projects, please reach out to me via <NavLink to={'/contact'}>{overlap('contact', 'lightblue')}</NavLink></h2>
       <br />
-      <h2>Technologies Known</h2> 
+      <h2>Technologies Known</h2>
       <h3>Proficient</h3>
       <div style={wrapper}>
         <Chip style={singleChip}>Javascript</Chip>
