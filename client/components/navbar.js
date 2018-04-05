@@ -39,10 +39,8 @@ class Navbar extends React.Component {
               <h3 style={{ display: 'inline' }}><NavLink to="/about">{path === '/about' ? overlap('About') : 'About'}</NavLink></h3>
               <h3 style={{ display: 'inline' }}><NavLink to="/projects">{path === '/projects' ? overlap('Projects') : 'Projects'}</NavLink></h3>
               <h3 style={{ display: 'inline' }}><NavLink to="/contact">{path === '/contact' ? overlap('Contact') : 'Contact'}</NavLink></h3>
-              <h3 style={{ display: 'inline' }}><a href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
-              <h3 style={{ display: 'inline' }}><a href="https://github.com/Semiroundpizza8">Github</a></h3>
-              {/* <a href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in fa-lg" /></a>
-              <a to="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a> */}
+              <h3 style={{ display: 'inline' }}><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
+              <h3 style={{ display: 'inline' }}><a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8">Github</a></h3>
             </div>
           </nav> :
           <nav>
@@ -52,8 +50,8 @@ class Navbar extends React.Component {
               <NavLink to="/about"><i className="fas fa-user-circle" /></NavLink>
               <NavLink to="/projects"><i className="fas fa-folder-open" /></NavLink>
               <NavLink to="/contact"><i className="fas fa-envelope" /></NavLink>
-              <a href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
-              <a href="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
             </div>
           </nav>
         }

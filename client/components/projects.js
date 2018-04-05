@@ -31,7 +31,7 @@ export function Projects() {
     {
       id: 4,
       name: 'Stackathon',
-      link: '',
+      link: 'https://github.com/Semiroundpizza8/AgentStudy',
       type: 'Generative Art Piece',
       description: 'Utilizes autonomous agents and their lifelike movement patterns in order to paint unique,  abstract pieces that mutate as time goes on.',
       technologies: 'p5.js, Autonomous Agents, Cellular Automota, Vanilla Javascript.'
@@ -51,9 +51,10 @@ export function Projects() {
       <h1>Projects.</h1>
       {projectData.map(project => (
         <div key={project.id}>
-          <h2 style={{ fontSize: '2em'}}><a href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5'}}>  {project.type}</span></h2>
+          <h2 style={{ fontSize: '2em'}}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5'}}>  {project.type}</span></h2>
           <p style={{ fontSize: '1em' }}>{project.description}</p>
           <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
+          <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
         </div>
       )
       )}
