@@ -17,7 +17,7 @@ class Footer extends React.Component {
     return (
       <div>
         <hr />
-        <p>Email: Semiroundpizza8@gmail.com</p>
+        <p>Email: Me@BenOdisho.com</p>
         <p>Phone: 773-633-0078</p>
         <nav>
           <div>

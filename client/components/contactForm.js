@@ -57,7 +57,7 @@ class TextFieldExampleSimple extends React.Component {
           onChange={this.handleChange}
         /><br />
         <TextField
-          hintText="Semiroundpizza8@gmail.com"
+          hintText="Me@BenOdisho.com"
           floatingLabelText="Email"
           name="email"
           value={this.state.email}

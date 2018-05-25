@@ -11,11 +11,11 @@ export function Contact() {
     <div>
       <h1>Talk to me!</h1>
       <p>Feel free to reach out to me anytime via any of the following mediums:</p>
-      <p>Email: Semiroundpizza8@gmail.com</p>
+      <p>Email: Me@BenOdisho.com</p>
       <p>Phone: 773-633-0078</p>
       <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/" style={{marginRight: '2.5%'}}><i className="fab fa-linkedin-in fa-lg" /></a>
       <a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a>
-      {/* <ContactForm /> */}
+      <ContactForm />
     </div>
   )
 }
