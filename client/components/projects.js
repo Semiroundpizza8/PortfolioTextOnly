@@ -5,6 +5,14 @@ import { overlap } from './overlap';
 export function Projects() {
   const projectData = [
     {
+      id: 6,
+      name: 'Bitboards',
+      link: 'https://bitboarddm.herokuapp.com/',
+      type: 'Web Application',
+      description: 'An application built to allow users to bid on digital advertisment space using Bitcoin technologies. Built for the 2018 Distributed Markets hackathon, being awarded 1st place for both best blockchain application and best use of Qtum technologies.',
+      technologies: 'Solidity, Qtum, Blockchain, React, Express, Truffle.'
+    },
+    {
       id: 1,
       name: 'DayDreamer',
       link: 'https://github.com/Capstone-Daydreamer/Capstone-Daydreamer',
