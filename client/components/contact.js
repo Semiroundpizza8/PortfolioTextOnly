@@ -15,7 +15,7 @@ export function Contact() {
       <p>Phone: 773-633-0078</p>
       <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/" style={{marginRight: '2.5%'}}><i className="fab fa-linkedin-in fa-lg" /></a>
       <a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   )
 }
