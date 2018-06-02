@@ -4,9 +4,24 @@ import { overlap } from './overlap.js';
 import { NavLink } from 'react-router-dom';
 
 export function Home() {
-  const textStyle = { display: 'inline' };
-  return (
-    <h1>Hello!</h1>
+
+  const headerStyle = {
+    fontSize: '9em'
+  }
+
+  const linkStyle = {
+    marginBottom: '5vh',
+    fontSize: '2em',
+    textAlign: 'right'
+   };
+
+   return (
+    <div style={{ display: 'flex', justifyContent: 'right', flexDirection: 'column' }}>
+      <h1 style={headerStyle}>Hello!</h1>
+      <NavLink to="/about" style={linkStyle}>About</NavLink>
+      <NavLink to="/projects" style={linkStyle}>Projects</NavLink>
+      <NavLink to="/contact" style={linkStyle}>Contact</NavLink>
+    </div>
   )
 }
 
