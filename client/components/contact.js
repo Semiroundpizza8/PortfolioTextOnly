@@ -7,6 +7,24 @@ export function Contact() {
   let icons = {
     marginRight: '3%',
   }
+
+  // ---------------------------
+  // CANVAS INIT
+
+  // Delete canvas script if currently one there
+  let currentCanvas = document.getElementsByClassName('canvasScript')
+  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
+
+  // Create and run new script
+  const script = document.createElement("script");
+  script.className = 'canvasScript'
+  script.src = "./canvas/flower.js";
+  script.async = true;
+
+  // Add script to page
+  document.body.appendChild(script);
+  // ---------------------------
+
   return (
     <div>
       <h1>Talk to me!</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export let overlap = (word, color) => {
+export let overlap = (word, color, direction) => {
   const colors = [
     'lightblue',
     'yellow',
@@ -23,7 +23,7 @@ export let overlap = (word, color) => {
     position: 'relative',
     zIndex: '-3',
     top: '3px',
-    right: '3px',
+    right: direction === 'right' ? '-3px' : '3px',
     userSelect: 'none'
   }
 

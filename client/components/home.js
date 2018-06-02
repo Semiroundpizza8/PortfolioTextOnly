@@ -13,14 +13,32 @@ export function Home() {
     marginBottom: '5vh',
     fontSize: '2em',
     textAlign: 'right'
-   };
+  };
 
-   return (
-    <div style={{ display: 'flex', justifyContent: 'right', flexDirection: 'column' }}>
+  // ---------------------------
+  // CANVAS INIT
+
+  // Delete canvas script if currently one there
+  let currentCanvas = document.getElementsByClassName('canvasScript')
+  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
+
+  // Create and run new script
+  const script = document.createElement("script");
+  script.className = 'canvasScript'
+  script.src = "./canvas/flower.js";
+  script.async = true;
+
+  // Add script to page
+  document.body.appendChild(script);
+  // ---------------------------
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column' }}>
+      <p style={{fontSize: '1em'}}>(click anywhere to paint!)</p>
       <h1 style={headerStyle}>Hello!</h1>
-      <NavLink to="/about" style={linkStyle}>About</NavLink>
-      <NavLink to="/projects" style={linkStyle}>Projects</NavLink>
-      <NavLink to="/contact" style={linkStyle}>Contact</NavLink>
+      <p style={linkStyle}><NavLink to="/about">About</NavLink></p>
+      <p style={linkStyle}><NavLink to="/about">Projects</NavLink></p>
+      <p style={linkStyle}><NavLink to="/about">Contact</NavLink></p>
     </div>
   )
 }

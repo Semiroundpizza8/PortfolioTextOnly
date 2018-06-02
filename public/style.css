@@ -1,6 +1,7 @@
 body {
   /* font-family: sans-serif; */
   font-family: 'Montserrat', sans-serif;
+  user-select: none;
 }
 
 a, a:visited{

@@ -54,12 +54,29 @@ export function Projects() {
     },
   ]
 
+  // ---------------------------
+  // CANVAS INIT
+
+  // Delete canvas script if currently one there
+  let currentCanvas = document.getElementsByClassName('canvasScript')
+  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
+
+  // Create and run new script
+  const script = document.createElement("script");
+  script.className = 'canvasScript'
+  script.src = "./canvas/flower.js";
+  script.async = true;
+
+  // Add script to page
+  document.body.appendChild(script);
+  // ---------------------------
+
   return (
     <div>
       <h1>Projects.</h1>
       {projectData.map(project => (
         <div key={project.id}>
-          <h2 style={{ fontSize: '2em'}}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5'}}>  {project.type}</span></h2>
+          <h2 style={{ fontSize: '2em' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5' }}>  {project.type}</span></h2>
           <p style={{ fontSize: '1em' }}>{project.description}</p>
           <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
           <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
