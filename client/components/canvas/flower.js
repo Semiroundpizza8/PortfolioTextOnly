@@ -1,6 +1,7 @@
+export default function canvasScript() {
 // Initial Setup
-if (!canvas) var canvas = document.querySelector('canvas');
 if(!count) var count = 0;
+if (!canvas) var canvas = document.querySelector('canvas');
 
 if (!c) var c = canvas.getContext('2d');
 
@@ -8,7 +9,7 @@ if (!body) var body = document.body, html = document.documentElement;
 
 if (!dynamicHeight) var dynamicHeight;
 
-dynamicHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight) + 40;
+dynamicHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight);
 
 canvas.width = innerWidth;
 canvas.height = dynamicHeight;
@@ -17,12 +18,12 @@ if (!mouseDownFlag) var mouseDownFlag = false;
 if (!pressCount) var pressCount = 0;
 
 // Variables
-var mouse = {
+if (!mouse) var mouse = {
 	x: innerWidth / 2,
 	y: innerHeight / 2
 };
 
-var colors = [
+if (!colors) var colors = [
 	'#2185C5',
 	'#7ECEFD',
 	'#FFF6E5',
@@ -31,6 +32,11 @@ var colors = [
 ];
 
 // Event Listeners
+addEventListener('mousemove', event => {
+	mouse.x = event.clientX + window.pageXOffset;
+	mouse.y = event.clientY + window.pageYOffset;
+});
+
 addEventListener('keypress', () => {
 	switch (pressCount++ % 4) {
 		case 0: //Bubblegum
@@ -73,43 +79,18 @@ addEventListener('keypress', () => {
 
 })
 
-// addEventListener('resize', () => {
-// 	canvas.width = innerWidth;
-// 	canvas.height = dynamicHeight;
+addEventListener('resize', () => {
+	canvas.width = innerWidth;
+	canvas.height = dynamicHeight;
 
-// 	init();
-// });
+	init();
+});
 
-//------------
-// Mouse
-//-----------
 addEventListener('mousedown', () => {
 	mouseDownFlag = true;
 })
 
 addEventListener('mouseup', () => {
-	mouseDownFlag = false;
-})
-
-addEventListener('mousemove', event => {
-	mouse.x = event.clientX + window.pageXOffset;
-	mouse.y = event.clientY + window.pageYOffset;
-});
-
-
-//------------
-// Touch
-//-----------
-addEventListener('touchmove', event => {
-	mouse.x = event.clientX + window.pageXOffset;
-	mouse.y = event.clientY + window.pageYOffset;
-})
-
-addEventListener('touchstart', () => {
-	mouseDownFlag = true;
-})
-
-addEventListener('touchend', () => {
 	mouseDownFlag = false;
 })
 
@@ -173,7 +154,7 @@ function Circle(x, y, radius, color) {
 
 
 // Implementation
-if(!circles) var circles;
+if (!circles) var circles;
 function init() {
 	circles = []
 
@@ -190,6 +171,7 @@ function animate() {
 			circles.push(new Circle(x, y, 50, color));
 		}
 	}
+	console.log('in here', count++);
 	circles.forEach(circle => {
 		circle.update();
 	});
@@ -209,3 +191,4 @@ function animate() {
 
 init();
 animate();
+}

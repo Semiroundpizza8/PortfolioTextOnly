@@ -1,18 +1,24 @@
-// Initial Setup
-const canvas = document.getElementById('kermit');
-const c = canvas.getContext('2d');
+export default function canvasScript() {// Initial Setup
+if (!canvas) var canvas = document.querySelector('canvas');
+
+if (!c) var c = canvas.getContext('2d');
+
+if (!body) var body = document.body, html = document.documentElement;
+
+if (!dynamicHeight) var dynamicHeight;
+
+dynamicHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight);
 
 canvas.width = innerWidth;
-canvas.height = innerHeight;
-
+canvas.height = dynamicHeight;
 
 // Variables
-const mouse = {
-	x: innerWidth / 2,
-	y: innerHeight / 2 
+if(!mouse) var mouse = {
+	x: - innerWidth / 2,
+	y: - innerHeight / 2 
 };
 
-const colors = [
+if(!colors) var colors = [
 	'#6A7059',
 	'#FDEEA7',
 	'#9BCC93',
@@ -105,8 +111,8 @@ function Ball(x, y, dx, dy, radius, color) {
 
 
 // Implementation
-let balls = [];
-let radius = 10
+if(!balls) var balls = [];
+if(!radius) var radius = 10
 
 function init() {
 	balls = [];
@@ -114,8 +120,12 @@ function init() {
 		var radius = randomIntFromRange(4, 10);
 		var x = randomIntFromRange(radius, canvas.width-radius);
 		var y = randomIntFromRange(radius, canvas.height-radius);
-		var dx = randomIntFromRange(-.5, .5);
-		var dy = randomIntFromRange(-.5, .5);
+		do {
+			var dx = randomIntFromRange(-.15, .15);
+		} while (dx === 0)
+		do {
+			var dy = randomIntFromRange(-.15, .15);
+		} while (dy === 0)
 		var color = randomColor(colors);
 		balls.push(new Ball(x, y, dx, dy, radius, color));
 	}
@@ -132,3 +142,4 @@ function animate() {
 
 init();
 animate();
+}

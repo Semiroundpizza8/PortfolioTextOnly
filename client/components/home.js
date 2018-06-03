@@ -15,22 +15,22 @@ export function Home() {
     textAlign: 'right'
   };
 
-  // ---------------------------
-  // CANVAS INIT
+  // // ---------------------------
+  // // CANVAS INIT
 
-  // Delete canvas script if currently one there
-  let currentCanvas = document.getElementsByClassName('canvasScript')
-  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
+  // // Delete canvas script if currently one there
+  // let currentCanvas = document.getElementsByClassName('canvasScript')
+  // if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
 
-  // Create and run new script
-  const script = document.createElement("script");
-  script.className = 'canvasScript'
-  script.src = "./canvas/flower.js";
-  script.async = true;
+  // // Create and run new script
+  // const script = document.createElement("script");
+  // script.className = 'canvasScript'
+  // script.src = "./canvas/flower.js";
+  // script.async = true;
 
-  // Add script to page
-  document.body.appendChild(script);
-  // ---------------------------
+  // // Add script to page
+  // document.body.appendChild(script);
+  // // ---------------------------
 
   return (
     <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column' }}>
