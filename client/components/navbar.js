@@ -5,11 +5,33 @@ import { NavLink } from 'react-router-dom'
 import { logout } from '../store'
 import responsive from 'react-responsive-decorator';
 import { withRouter } from 'react-router'
-import { overlap } from './overlap';
+import { overlap, gradate } from './overlap';
+
 
 class Navbar extends React.Component {
-  state = {
-    isMobile: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMobile: false
+    }
+  }
+
+  flex = {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  }
+
+  backgroundStyle = {
+    backgroundColor: '#231f20',
+    position: 'fixed',
+    top: 0,
+    width: '100%',
+    zIndex: '100'
+  }
+
+  navStyle = {
+    display: 'inline',
+    margin: '0'
   }
 
   componentDidMount() {
@@ -30,17 +52,17 @@ class Navbar extends React.Component {
     const path = this.props.location.pathname
 
     return (
-      <div>
+      <div style={this.backgroundStyle}>
         {!isMobile ?
           <nav>
-            <div>
+            <div style={this.flex}>
               {/* The Footer will show these NavLinks before you log in */}
-              <h3 style={{ display: 'inline' }}><NavLink to="/">{path === '/' ? overlap('Benjamin Odisho') : 'Benjamin Odisho'}</NavLink></h3>
-              <h3 style={{ display: 'inline' }}><NavLink to="/about">{path === '/about' ? overlap('About') : 'About'}</NavLink></h3>
-              <h3 style={{ display: 'inline' }}><NavLink to="/projects">{path === '/projects' ? overlap('Projects') : 'Projects'}</NavLink></h3>
-              <h3 style={{ display: 'inline' }}><NavLink to="/contact">{path === '/contact' ? overlap('Contact') : 'Contact'}</NavLink></h3>
-              <h3 style={{ display: 'inline' }}><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
-              <h3 style={{ display: 'inline' }}><a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8">Github</a></h3>
+              <h3 style={this.navStyle}><NavLink to="/">{path === '/' ? gradate('Benjamin Odisho', 'dark') : 'Benjamin Odisho'}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/about">{path === '/about' ? overlap('About') : 'About'}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/projects">{path === '/projects' ? overlap('Projects') : 'Projects'}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/contact">{path === '/contact' ? overlap('Contact') : 'Contact'}</NavLink></h3>
+              <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
+              <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8">Github</a></h3>
             </div>
           </nav> :
           <nav>
@@ -55,7 +77,6 @@ class Navbar extends React.Component {
             </div>
           </nav>
         }
-        <hr />
       </div>
     );
   }

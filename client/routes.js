@@ -17,7 +17,7 @@ class Routes extends Component {
     const {isLoggedIn} = this.props
 
     return (
-      <Switch>
+      <Switch style={{ marginTop: '110px'}}>
         {/* Routes placed here are available to all visitors */}
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />

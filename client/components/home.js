@@ -1,24 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { About } from './';
 import { overlap } from './overlap.js';
 import { NavLink } from 'react-router-dom';
-
+import { gradate } from './overlap';
 export function Home() {
 
   const headerStyle = {
-    fontSize: '9em'
+    color: '#231f20',
+    marginLeft: '5vw',
+    zIndex: '-5',
+    paddingTop: '80px'
+  }
+
+  const hiddenHeaderStyle = {
+    color: 'white',
+    marginRight: '5vw',
+    zIndex: '5',
+    paddingTop: '80px',
+    textAlign: 'right',
+    justifySelf: 'right'
   }
 
   const linkStyle = {
     marginBottom: '5vh',
     fontSize: '2em',
-    textAlign: 'right'
+    textAlign: 'right',
   };
 
   // // ---------------------------
   // // CANVAS INIT
 
-  // // Delete canvas script if currently one there
+  // Delete canvas script if currently one there
   // let currentCanvas = document.getElementsByClassName('canvasScript')
   // if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
 
@@ -33,12 +46,15 @@ export function Home() {
   // // ---------------------------
 
   return (
-    <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column' }}>
-      <p style={{fontSize: '1em'}}>(click anywhere to paint!)</p>
-      <h1 style={headerStyle}>Hello!</h1>
-      <p style={linkStyle}><NavLink to="/about">About</NavLink></p>
-      <p style={linkStyle}><NavLink to="/about">Projects</NavLink></p>
-      <p style={linkStyle}><NavLink to="/about">Contact</NavLink></p>
+    <div>
+      <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column', width: '100vw', height: '80vh' }}>
+        <canvas src="./canvas/flowe.js" async width="100vw" height="80vh" style={{ position: 'relative', zIndex: '-1' }} />
+        <div style={{ display: 'flex', width: '90vw', position: 'absolute', justifyContent: 'space-between', paddingLeft: '5vw', paddingRight: '5vw' }}>
+          <h1 style={headerStyle}>Designing<br />{gradate('Experiences', 'light')}<br />Before<br />Websites</h1>
+          <h1 style={hiddenHeaderStyle}>Designing<br />Experiences<br />Before<br />Websites</h1>
+        </div>
+      </div>
+      <About />
     </div>
   )
 }

@@ -1,17 +1,17 @@
 // Initial Setup
 if (!canvas) var canvas = document.querySelector('canvas');
-if(!count) var count = 0;
+if (!count) var count = 0;
 
 if (!c) var c = canvas.getContext('2d');
 
 if (!body) var body = document.body, html = document.documentElement;
 
-if (!dynamicHeight) var dynamicHeight;
+// if (!dynamicHeight) var dynamicHeight;
 
-dynamicHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight) + 40;
+// dynamicHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight) + 40;
 
 canvas.width = innerWidth;
-canvas.height = dynamicHeight;
+canvas.height = innerHeight * .805;
 
 if (!mouseDownFlag) var mouseDownFlag = false;
 if (!pressCount) var pressCount = 0;
@@ -73,12 +73,12 @@ addEventListener('keypress', () => {
 
 })
 
-// addEventListener('resize', () => {
-// 	canvas.width = innerWidth;
-// 	canvas.height = dynamicHeight;
+addEventListener('resize', () => {
+	canvas.width = innerWidth;
+	canvas.height = dynamicHeight;
 
-// 	init();
-// });
+	// init();
+});
 
 //------------
 // Mouse
@@ -113,13 +113,11 @@ addEventListener('touchend', () => {
 	mouseDownFlag = false;
 })
 
-addEventListener('click', () => {
-	for (let j = 0; j < 7; j++) {
-		var x = mouse.x + randomIntFromRange(-60, 60);
-		var y = mouse.y + randomIntFromRange(-60, 60);
-		var color = randomColor(colors);
-		circles.push(new Circle(x, y, 50, color));
-	}
+addEventListener('mousemove', () => {
+	var x = mouse.x + randomIntFromRange(-60, 60);
+	var y = mouse.y + randomIntFromRange(-60, 60);
+	var color = randomColor(colors);
+	circles.push(new Circle(x, y, 50, color));
 })
 
 
@@ -173,7 +171,7 @@ function Circle(x, y, radius, color) {
 
 
 // Implementation
-if(!circles) var circles;
+if (!circles) var circles;
 function init() {
 	circles = []
 

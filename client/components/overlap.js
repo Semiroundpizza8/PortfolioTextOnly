@@ -1,6 +1,6 @@
 import React from 'react';
 
-export let overlap = (word, color, direction) => {
+export const overlap = (word, color, direction) => {
   const colors = [
     'lightblue',
     'yellow',
@@ -43,3 +43,22 @@ export let overlap = (word, color, direction) => {
     </span >
   );
 }
+
+export const gradate = (sentence, color, direction) => {
+  color = color === 'light' ? 'linear-gradient(to right, #92fe9d, #00c9ff)' : 'linear-gradient(to right, #f46b45, #eea849)'
+  return (
+    <span style={{ background: 'none', position: 'relative'}}>
+      {sentence}
+      <span style={{ width: '95%', height: '60%', background: color, position: 'absolute', zIndex: '-10', right: '.6em', bottom: '-.1em'}} />
+    </span>
+  );
+}
+
+// background: linear-gradient(to right,#f15b2a 0,#e80a89 100%);
+// width: 100%;
+// height: 61%;
+// position: absolute;
+// left: .15em;
+// bottom: 0;
+// right: 0;
+// z-index: -1;
