@@ -13,31 +13,14 @@ export function About() {
     margin: '4px'
   }
 
-  // // ---------------------------
-  // // CANVAS INIT
-
-  // Delete canvas script if currently one there
-  let currentCanvas = document.getElementsByClassName('canvasScript')
-  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
-
-  // Create and run new script
-  const script = document.createElement("script");
-  script.className = 'canvasScript'
-  script.src = "./canvas/flower.js";
-  script.async = true;
-
-  // Add script to page
-  document.body.appendChild(script);
-  // // ---------------------------
-
   return (
-    <div style={{ backgroundColor: 'whitesmoke', zIndex: '-20' }}>
+    <div style={{ backgroundColor: 'whitesmoke', zIndex: '-20', paddingBottom: '5vh' }}>
       <div style={{ marginLeft: '5vw', paddingTop: '30px', width: '75%'}}>
         <h1>{gradate('Who am I?', 'dark')}</h1>
         <p>I'm Benjamin Odisho, a web developer within the Chicagoland area. I began my journies with development studying design and computer science at the University of Illinois at Chicago, working primarily within Java and C++.
         Wanting to work within a faster paced, project based environment I later turned to continue my studies at Fullstack Academy. While there I became proficient in Javascript, along with a number of different web-based technologies such as React, Redux, Express, and Sequelize.
         Following my studies, the staff decided I was awesome enough to be kept on as a Software Engineering Teaching Fellow. There I worked teaching 60+ students those same technologies, acting as a project manager for student projects, and giving lectures on web development technologies. </p>
-        <h2>If you want to get in touch and discuss any of my past or potential projects, please reach out to me via <NavLink to={'/contact'}>{overlap('contact', 'lightblue')}</NavLink></h2>
+        {/* <h2>If you want to get in touch and discuss any of my past or potential projects, please reach out to me </h2> */}
         <br />
         <h2>Technologies Known</h2>
         <h3>Proficient</h3>

@@ -19,19 +19,29 @@ class Navbar extends React.Component {
   flex = {
     display: 'flex',
     justifyContent: 'flex-end',
+    marginLeft: '5vw',
+    marginRight: '5vw'
   }
 
   backgroundStyle = {
     backgroundColor: '#231f20',
     position: 'fixed',
     top: 0,
+    opacity: '.85',
     width: '100%',
     zIndex: '100'
   }
 
   navStyle = {
     display: 'inline',
+    opacity: '1',
     margin: '0'
+  }
+
+  mobileNavStyle = {
+    display: 'inline',
+    opacity: '1',
+    marginLeft: '5vw'
   }
 
   componentDidMount() {
@@ -57,23 +67,23 @@ class Navbar extends React.Component {
           <nav>
             <div style={this.flex}>
               {/* The Footer will show these NavLinks before you log in */}
-              <h3 style={this.navStyle}><NavLink to="/">{path === '/' ? gradate('Benjamin Odisho', 'dark') : 'Benjamin Odisho'}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/about">{path === '/about' ? overlap('About') : 'About'}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/projects">{path === '/projects' ? overlap('Projects') : 'Projects'}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/contact">{path === '/contact' ? overlap('Contact') : 'Contact'}</NavLink></h3>
+              <h3 style={{ ...this.navStyle, marginRight: 'auto'}}><NavLink to="/">{gradate('Benjamin Odisho', 'dark')}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/about">{path === '/about' ? gradate('About') : 'About'}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/projects">{path === '/projects' ? gradate('Projects') : 'Projects'}</NavLink></h3>
+              <h3 style={this.navStyle}><NavLink to="/contact">{path === '/contact' ? gradate('Contact') : 'Contact'}</NavLink></h3>
               <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
               <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8">Github</a></h3>
             </div>
           </nav> :
           <nav>
-            <div>
+            <div style={this.flex}>
               {/* The navbar will show these NavLinks before you log in */}
-              <NavLink to="/"><i className="fas fa-home"></i></NavLink>
-              <NavLink to="/about"><i className="fas fa-user-circle" /></NavLink>
-              <NavLink to="/projects"><i className="fas fa-folder-open" /></NavLink>
-              <NavLink to="/contact"><i className="fas fa-envelope" /></NavLink>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
+              <NavLink style={this.mobileNavStyle} to="/"><i className="fas fa-home"></i></NavLink>
+              <NavLink style={this.mobileNavStyle} to="/about"><i className="fas fa-user-circle" /></NavLink>
+              <NavLink style={this.mobileNavStyle} to="/projects"><i className="fas fa-folder-open" /></NavLink>
+              <NavLink style={this.mobileNavStyle} to="/contact"><i className="fas fa-envelope" /></NavLink>
+              <a style={this.mobileNavStyle} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
+              <a style={this.mobileNavStyle} target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
             </div>
           </nav>
         }

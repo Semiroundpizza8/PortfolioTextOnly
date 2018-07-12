@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { About } from './';
+import { About, Contact } from './';
 import { overlap } from './overlap.js';
 import { NavLink } from 'react-router-dom';
 import { gradate } from './overlap';
+
 export function Home() {
 
   const headerStyle = {
     color: '#231f20',
-    marginLeft: '5vw',
-    zIndex: '-5',
+    zIndex: '2',
     paddingTop: '80px'
   }
 
@@ -28,33 +28,34 @@ export function Home() {
     textAlign: 'right',
   };
 
-  // // ---------------------------
-  // // CANVAS INIT
+  // ---------------------------
+  // CANVAS INIT
 
   // Delete canvas script if currently one there
   // let currentCanvas = document.getElementsByClassName('canvasScript')
   // if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
 
-  // // Create and run new script
-  // const script = document.createElement("script");
+  // Create and run new script
+  const script = document.createElement("script");
   // script.className = 'canvasScript'
-  // script.src = "./canvas/flower.js";
-  // script.async = true;
+  script.src = "./canvas/flower.js";
+  script.async = true;
 
-  // // Add script to page
-  // document.body.appendChild(script);
-  // // ---------------------------
+  // Add script to page
+  document.body.appendChild(script);
+  // ---------------------------
 
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column', width: '100vw', height: '80vh' }}>
-        <canvas src="./canvas/flowe.js" async width="100vw" height="80vh" style={{ position: 'relative', zIndex: '-1' }} />
+        <canvas src="./canvas/flowe.js" async width="100vw" height="80vh" style={{ position: 'relative', zIndex: '-1', opacity: '.5' }} />
         <div style={{ display: 'flex', width: '90vw', position: 'absolute', justifyContent: 'space-between', paddingLeft: '5vw', paddingRight: '5vw' }}>
-          <h1 style={headerStyle}>Designing<br />{gradate('Experiences', 'light')}<br />Before<br />Websites</h1>
-          <h1 style={hiddenHeaderStyle}>Designing<br />Experiences<br />Before<br />Websites</h1>
+          <h1 style={headerStyle}>Developing<br />{gradate('Experiences', 'light')}<br />Before<br />Websites</h1>
+          {/* <h1 style={hiddenHeaderStyle}>Designing<br />Experiences<br />Before<br />Websites</h1> */}
         </div>
       </div>
       <About />
+      <Contact />
     </div>
   )
 }

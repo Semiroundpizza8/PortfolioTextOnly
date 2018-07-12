@@ -8,32 +8,15 @@ export function Contact() {
     marginRight: '3%',
   }
 
-  // // ---------------------------
-  // // CANVAS INIT
-
-  // Delete canvas script if currently one there
-  let currentCanvas = document.getElementsByClassName('canvasScript')
-  if (currentCanvas.length) { document.body.removeChild(currentCanvas[0]) }
-
-  // Create and run new script
-  const script = document.createElement("script");
-  script.className = 'canvasScript'
-  script.src = "./canvas/flower.js";
-  script.async = true;
-
-  // Add script to page
-  document.body.appendChild(script);
-  // // ---------------------------
-
   return (
-    <div>
+    <div style={{ marginLeft: '5vw', marginRight: '5vw'}}>
       <h1>Talk to me!</h1>
       <p>Feel free to reach out to me anytime via any of the following mediums:</p>
       <p>Email: Me@BenOdisho.com</p>
       <p>Phone: 773-633-0078</p>
       <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/" style={{marginRight: '2.5%'}}><i className="fab fa-linkedin-in fa-lg" /></a>
       <a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github fa-lg" /></a>
-      {/* <ContactForm /> */}
+      <ContactForm />
     </div>
   )
 }
