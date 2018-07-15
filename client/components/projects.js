@@ -1,6 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { overlap } from './overlap';
+import { Card, CardMedia, CardContent, CardActions, Button, Typography} from 'material-ui'
+
+const styles = {
+  card: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+};
 
 export function Projects() {
   const projectData = [
@@ -53,6 +64,7 @@ export function Projects() {
       technologies: 'React, Redux, Sequelize, Express, Bootstrap.'
     },
   ]
+  
 
   // ---------------------------
   // CANVAS INIT
@@ -75,12 +87,29 @@ export function Projects() {
     <div>
       <h1>Projects.</h1>
       {projectData.map(project => (
-        <div key={project.id}>
-          <h2 style={{ fontSize: '2em' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5' }}>  {project.type}</span></h2>
-          <p style={{ fontSize: '1em' }}>{project.description}</p>
-          <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
-          <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
-        </div>
+        <Card key={project.id}>
+          <CardMedia
+            image="/static/images/cards/contemplative-reptile.jpg"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="headline" component="h2">
+              Lizard
+        </Typography>
+            <Typography component="p">
+              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica
+        </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary">
+              Share
+        </Button>
+            <Button size="small" color="primary">
+              Learn More
+        </Button>
+          </CardActions>
+        </Card>
       )
       )}
     </div>
@@ -88,3 +117,10 @@ export function Projects() {
 }
 
 export default connect(null, null)(Projects);
+
+{/* <div key={project.id}>
+  <h2 style={{ fontSize: '2em' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5' }}>  {project.type}</span></h2>
+  <p style={{ fontSize: '1em' }}>{project.description}</p>
+  <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
+  <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
+</div> */}
