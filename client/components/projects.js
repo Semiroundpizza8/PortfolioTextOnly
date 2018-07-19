@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { overlap } from './overlap';
-import { Card, CardMedia, CardContent, CardActions, Button, Typography} from 'material-ui'
+import { overlap, gradate } from './overlap';
+import { Card, CardMedia, CardContent, CardActions, Button, Typography } from 'material-ui'
 
 const styles = {
   card: {
@@ -33,7 +33,7 @@ export function Projects() {
     },
     {
       id: 2,
-      name: 'Ark',
+      name: 'Ark Hurricane Safety',
       link: 'https://github.com/Semiroundpizza8/Ark-1',
       type: 'iOS Application',
       description: 'Provides a centralized location for civilian rescue efforts during emergency situations by routing rescuers to those in need.',
@@ -41,7 +41,7 @@ export function Projects() {
     },
     {
       id: 3,
-      name: 'Lexi',
+      name: 'Lexi Extension',
       link: 'https://github.com/Semiroundpizza8/Lexi_Chrome_Extension',
       type: 'Chrome Extension',
       description: 'Helps make the web more accessable for people suffering with dyslexia by providing audio and visual representations of words.',
@@ -64,7 +64,7 @@ export function Projects() {
       technologies: 'React, Redux, Sequelize, Express, Bootstrap.'
     },
   ]
-  
+
 
   // ---------------------------
   // CANVAS INIT
@@ -84,32 +84,15 @@ export function Projects() {
   // ---------------------------
 
   return (
-    <div>
+    <div style={{margin: '0 5vw'}}>
       <h1>Projects.</h1>
       {projectData.map(project => (
-        <Card key={project.id}>
-          <CardMedia
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              Lizard
-        </Typography>
-            <Typography component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
-        </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-        </Button>
-            <Button size="small" color="primary">
-              Learn More
-        </Button>
-          </CardActions>
-        </Card>
+        <div key={project.id}>
+          <h2 style={{ fontSize: '2em' }}><a target="_blank" rel="noopener noreferrer" href={project.link} style={{color: 'black'}}>{gradate(project.name, 'light')}</a><span style={{ fontSize: '50%', opacity: '.5' }}>  {project.type}</span></h2>
+          <p style={{ fontSize: '1em' }}>{project.description}</p>
+          <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
+          <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
+        </div>
       )
       )}
     </div>
@@ -118,9 +101,3 @@ export function Projects() {
 
 export default connect(null, null)(Projects);
 
-{/* <div key={project.id}>
-  <h2 style={{ fontSize: '2em' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>{overlap(project.name)}</a><span style={{ fontSize: '50%', opacity: '.5' }}>  {project.type}</span></h2>
-  <p style={{ fontSize: '1em' }}>{project.description}</p>
-  <p style={{ fontSize: '1em' }}><b>Technologies Used:</b> {project.technologies}</p>
-  <p style={{ fontSize: '1em', color: 'blue' }}><a target="_blank" rel="noopener noreferrer" href={project.link}>Click Here to Learn More.</a></p>
-</div> */}

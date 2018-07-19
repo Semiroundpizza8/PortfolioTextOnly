@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { About, Contact } from './';
+import { About, Contact, Projects } from './';
 import { overlap } from './overlap.js';
 import { NavLink } from 'react-router-dom';
 import { gradate } from './overlap';
@@ -55,6 +55,7 @@ export function Home() {
         </div>
       </div>
       <About />
+      <Projects />
       <Contact />
     </div>
   )

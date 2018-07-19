@@ -31,7 +31,7 @@ var colors = [
 ];
 
 // Event Listeners
-addEventListener('keypress', () => {
+addEventListener('mousedown', () => {
 	switch (pressCount++ % 4) {
 		case 0: //Bubblegum
 			colors = [
@@ -83,13 +83,13 @@ addEventListener('resize', () => {
 //------------
 // Mouse
 //-----------
-addEventListener('mousedown', () => {
-	mouseDownFlag = true;
-})
+// addEventListener('mousedown', () => {
+// 	mouseDownFlag = true;
+// })
 
-addEventListener('mouseup', () => {
-	mouseDownFlag = false;
-})
+// addEventListener('mouseup', () => {
+// 	mouseDownFlag = false;
+// })
 
 addEventListener('mousemove', event => {
 	mouse.x = event.clientX + window.pageXOffset;
