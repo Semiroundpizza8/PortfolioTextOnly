@@ -9,7 +9,7 @@ export function Contact() {
   }
 
   return (
-    <div style={{ padding: '5vw', backgroundColor: 'whitesmoke'}}>
+    <div style={{ padding: '5vw', backgroundColor: 'whitesmoke'}} id='contact'>
       <h1>Talk to me!</h1>
       <p>Feel free to reach out to me anytime via any of the following mediums:</p>
       <p>Email: Me@BenOdisho.com</p>

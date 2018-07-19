@@ -14,7 +14,7 @@ export function About() {
   }
 
   return (
-    <div style={{ backgroundColor: 'whitesmoke', zIndex: '-20', paddingBottom: '5vh' }}>
+    <div style={{ backgroundColor: 'whitesmoke', zIndex: '-20', paddingBottom: '5vh' }} id='about'>
       <div style={{ marginLeft: '5vw', paddingTop: '30px', width: '75%'}}>
         <h1>{gradate('Who am I?', 'dark')}</h1>
         <p>I'm Benjamin Odisho, a web developer within the Chicagoland area. I began my journies with development studying design and computer science at the University of Illinois at Chicago, working primarily within Java and C++.

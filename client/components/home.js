@@ -46,7 +46,7 @@ export function Home() {
   // ---------------------------
 
   return (
-    <div>
+    <div id='home'>
       <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column', width: '100vw', height: '80vh' }}>
         <canvas src="./canvas/flowe.js" async width="100vw" height="80vh" style={{ position: 'relative', zIndex: '-1', opacity: '.5' }} />
         <div style={{ display: 'flex', width: '90vw', position: 'absolute', justifyContent: 'space-between', paddingLeft: '5vw', paddingRight: '5vw' }}>

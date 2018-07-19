@@ -84,7 +84,7 @@ export function Projects() {
   // ---------------------------
 
   return (
-    <div style={{margin: '0 5vw'}}>
+    <div style={{padding: '5vh 5vw'}} id='projects'>
       <h1>Projects.</h1>
       {projectData.map(project => (
         <div key={project.id}>

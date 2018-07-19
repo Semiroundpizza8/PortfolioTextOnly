@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import Scrollchor from 'react-scrollchor'
 import { logout } from '../store'
 import responsive from 'react-responsive-decorator';
 import { withRouter } from 'react-router'
@@ -20,7 +21,8 @@ class Navbar extends React.Component {
     display: 'flex',
     justifyContent: 'flex-end',
     marginLeft: '5vw',
-    marginRight: '5vw'
+    marginRight: '5vw',
+    alignItems: 'center'
   }
 
   backgroundStyle = {
@@ -41,7 +43,7 @@ class Navbar extends React.Component {
   mobileNavStyle = {
     display: 'inline',
     opacity: '1',
-    marginLeft: '5vw'
+    marginLeft: '2.5vw'
   }
 
   componentDidMount() {
@@ -67,21 +69,21 @@ class Navbar extends React.Component {
           <nav>
             <div style={this.flex}>
               {/* The Footer will show these NavLinks before you log in */}
-              <h3 style={{ ...this.navStyle, marginRight: 'auto'}}><NavLink to="/">{gradate('Benjamin Odisho', 'dark')}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/about">{path === '/about' ? gradate('About') : 'About'}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/projects">{path === '/projects' ? gradate('Projects') : 'Projects'}</NavLink></h3>
-              <h3 style={this.navStyle}><NavLink to="/contact">{path === '/contact' ? gradate('Contact') : 'Contact'}</NavLink></h3>
+              <h3 style={{ ...this.navStyle, marginRight: 'auto'}}><Scrollchor to="#home">{gradate('Benjamin Odisho', 'dark')}</Scrollchor></h3>
+              <h3 style={this.navStyle}><Scrollchor to="#about">{'About'}</Scrollchor></h3>
+              <h3 style={this.navStyle}><Scrollchor to="#projects">{'Projects'}</Scrollchor></h3>
+              <h3 style={this.navStyle}><Scrollchor to="#contact">{'Contact'}</Scrollchor></h3>
               <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/">LinkedIn</a></h3>
               <h3 style={this.navStyle}><a target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8">Github</a></h3>
             </div>
           </nav> :
           <nav>
             <div style={this.flex}>
-              {/* The navbar will show these NavLinks before you log in */}
-              <NavLink style={this.mobileNavStyle} to="/"><i className="fas fa-home"></i></NavLink>
-              <NavLink style={this.mobileNavStyle} to="/about"><i className="fas fa-user-circle" /></NavLink>
-              <NavLink style={this.mobileNavStyle} to="/projects"><i className="fas fa-folder-open" /></NavLink>
-              <NavLink style={this.mobileNavStyle} to="/contact"><i className="fas fa-envelope" /></NavLink>
+              {/* The navbar will show these Scrollchors before you log in */}
+              <h3 style={{ ...this.navStyle, marginRight: 'auto'}}><Scrollchor to="#home">{gradate('Benjamin Odisho', 'dark')}</Scrollchor></h3>
+              <Scrollchor style={this.mobileNavStyle} to="#about"><i className="fas fa-user-circle" /></Scrollchor>
+              <Scrollchor style={this.mobileNavStyle} to="#projects"><i className="fas fa-folder-open" /></Scrollchor>
+              <Scrollchor style={this.mobileNavStyle} to="#contact"><i className="fas fa-envelope" /></Scrollchor>
               <a style={this.mobileNavStyle} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/benjamin-odisho/"><i className="fab fa-linkedin-in" /></a>
               <a style={this.mobileNavStyle} target="_blank" rel="noopener noreferrer" href="https://github.com/Semiroundpizza8"><i className="fab fa-github" /></a>
             </div>
