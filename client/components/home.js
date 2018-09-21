@@ -50,7 +50,7 @@ export function Home() {
       <div style={{ display: 'flex', alignItems: 'right', flexDirection: 'column', width: '100vw', height: '80vh' }}>
         <canvas src="./canvas/flowe.js" async width="100vw" height="80vh" style={{ position: 'relative', zIndex: '-1', opacity: '.5' }} />
         <div style={{ display: 'flex', width: '90vw', position: 'absolute', justifyContent: 'space-between', paddingLeft: '5vw', paddingRight: '5vw' }}>
-          <h1 style={headerStyle}>Developing<br />{gradate('Experiences', 'light')}<br />Before<br />Websites</h1>
+          <h1 style={headerStyle}>Creating<br />{gradate('Quality', 'light')}<br />Web<br />Applications</h1>
           {/* <h1 style={hiddenHeaderStyle}>Designing<br />Experiences<br />Before<br />Websites</h1> */}
         </div>
       </div>
