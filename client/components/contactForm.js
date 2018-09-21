@@ -43,7 +43,6 @@ class TextFieldExampleSimple extends React.Component {
     }, () => {
       // console.log(oldState)
       axios.post('/api/email', oldState)
-        .then(() => {console.log("Email Sent!")})
     })
   }
 
