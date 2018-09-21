@@ -41,8 +41,8 @@ class TextFieldExampleSimple extends React.Component {
       content: '',
       disableSubmit: true
     }, () => {
-      console.log(oldState)
-      // axios.post('/api/email', oldState)
+      // console.log(oldState)
+      axios.post('/api/email', oldState)
     })
   }
 
