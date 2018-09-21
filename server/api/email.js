@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
 router.post('/', (req, res, next) => {
   const mailOptions = {
     from: process.env.GMAIL_USER,
-    to: process.env.GMAIL_USER,
+    to: "semiroundpizza8@gmail.com",
     subject: `Hey! Listen! Incoming email from ${req.body.name}.`,
     text: `Email: ${req.body.email} \nPhone: ${req.body.phone} \nContent: ${req.body.content}`
   }
